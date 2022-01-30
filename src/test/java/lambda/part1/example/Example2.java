@@ -1,9 +1,9 @@
 package lambda.part1.example;
 
 import interfaces.Summator;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SuppressWarnings({"Convert2Lambda", "FieldCanBeLocal", "CodeBlock2Expr", "unused", "Convert2MethodRef"})
 public class Example2 {

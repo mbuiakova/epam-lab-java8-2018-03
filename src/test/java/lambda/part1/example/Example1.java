@@ -5,12 +5,11 @@ import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
 import com.google.common.collect.FluentIterable;
 import lambda.data.Person;
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
 import java.util.*;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SuppressWarnings({"Guava", "Convert2Lambda", "Anonymous2MethodRef"})
 public class Example1 {
