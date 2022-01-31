@@ -2,15 +2,13 @@ package streams.part2.example;
 
 import lambda.data.Employee;
 import lambda.data.Person;
-import org.junit.Test;
 
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SuppressWarnings("ResultOfMethodCallIgnored")
 public class Example2 {
@@ -46,7 +44,7 @@ public class Example2 {
         assertEquals(expected, result);
     }
 
-    @Test(expected = IllegalStateException.class)
+    @Test//(expected = IllegalStateException.class)
     public void toHashMapKeyValueCollectorFailsWhenExistsSameKeys() {
         Stream.of(1, 1, 2, 3).collect(Collectors.toMap(Function.identity(), Object::toString));
     }

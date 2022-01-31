@@ -1,13 +1,12 @@
 package lambda.part1.example;
 
 import lambda.data.Person;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.concurrent.Callable;
 import java.util.function.Function;
-import java.util.function.Supplier;
-
-import static org.junit.Assert.assertEquals;
+import java.util.function.Supplier;;
 
 @SuppressWarnings({"Convert2Lambda", "Anonymous2MethodRef", "Convert2MethodRef"})
 public class Example4 {

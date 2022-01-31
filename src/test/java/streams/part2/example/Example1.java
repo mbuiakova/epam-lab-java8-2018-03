@@ -2,7 +2,8 @@ package streams.part2.example;
 
 import lambda.data.Employee;
 import lambda.data.Person;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.*;
 import java.util.function.BiConsumer;
@@ -13,8 +14,6 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
-
-import static org.junit.Assert.assertEquals;
 
 public class Example1 {
 

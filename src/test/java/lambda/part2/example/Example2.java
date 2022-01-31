@@ -1,15 +1,12 @@
 package lambda.part2.example;
 
 import lambda.data.Person;
-import org.junit.Test;
 
 import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Predicate;
-import java.util.stream.Stream;
-
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SuppressWarnings("UnnecessaryLocalVariable")
 public class Example2 {

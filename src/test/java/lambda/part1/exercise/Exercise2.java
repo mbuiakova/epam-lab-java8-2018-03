@@ -1,10 +1,8 @@
 package lambda.part1.exercise;
 
-import org.junit.Test;
-
 import java.util.StringJoiner;
-
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SuppressWarnings({"FieldCanBeLocal", "ConstantConditions", "unused"})
 public class Exercise2 {

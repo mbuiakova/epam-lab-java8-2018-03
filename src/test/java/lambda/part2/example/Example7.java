@@ -1,13 +1,13 @@
 package lambda.part2.example;
 
 import lambda.data.Person;
-import org.junit.Test;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.IntFunction;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SuppressWarnings("SameParameterValue")
 public class Example7 {

@@ -1,11 +1,10 @@
 package lambda.part1.example;
 
 import lambda.data.Person;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.function.Function;
-
-import static org.junit.Assert.assertEquals;
 
 public class Example5 {
 

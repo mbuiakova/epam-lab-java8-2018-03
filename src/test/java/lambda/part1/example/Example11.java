@@ -1,12 +1,13 @@
 package lambda.part1.example;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-import static junit.framework.TestCase.assertNotSame;
-import static junit.framework.TestCase.assertSame;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertSame;
+
 
 @SuppressWarnings({"unused", "ComparatorCombinators"})
 public class Example11 {

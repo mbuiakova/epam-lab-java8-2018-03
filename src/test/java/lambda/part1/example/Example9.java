@@ -1,7 +1,7 @@
 package lambda.part1.example;
 
 import lambda.data.Person;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

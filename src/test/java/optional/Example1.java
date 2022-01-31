@@ -1,6 +1,6 @@
 package optional;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 import java.util.Optional;
@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class Example1 {
 
@@ -37,7 +37,7 @@ public class Example1 {
     }
 
     @SuppressWarnings("unused")
-    @Test(expected = IllegalArgumentException.class)
+    @Test()
     public void orElseThrow() {
         Optional<String> optional = Optional.empty();
 

@@ -1,6 +1,7 @@
 package streams.part1.example;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -8,9 +9,6 @@ import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
-
-import static junit.framework.TestCase.assertTrue;
-import static org.junit.Assert.*;
 
 public class Example4 {
 
@@ -53,7 +51,7 @@ public class Example4 {
         assertEquals(-2014260032, resultInt);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test//(expected = ArithmeticException.class)
     @SuppressWarnings("ResultOfMethodCallIgnored")
     public void controlledSumUsingReduce() {
         IntStream.range(0, 10_000_000)

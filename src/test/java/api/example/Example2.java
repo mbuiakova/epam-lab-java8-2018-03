@@ -1,7 +1,7 @@
 package api.example;
 
 import lambda.data.Person;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -13,7 +13,7 @@ import java.util.function.UnaryOperator;
 import static java.util.Comparator.comparing;
 import static java.util.Comparator.comparingInt;
 import static java.util.Comparator.reverseOrder;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SuppressWarnings({"Java8ListSort", "Convert2Lambda", "Anonymous2MethodRef", "RedundantTypeArguments"})
 public class Example2 {

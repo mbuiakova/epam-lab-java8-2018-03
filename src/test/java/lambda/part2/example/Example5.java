@@ -1,10 +1,8 @@
 package lambda.part2.example;
 
-import org.junit.Test;
-
 import java.util.function.Function;
-
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SuppressWarnings({"UnnecessaryLocalVariable", "CodeBlock2Expr"})
 public class Example5 {

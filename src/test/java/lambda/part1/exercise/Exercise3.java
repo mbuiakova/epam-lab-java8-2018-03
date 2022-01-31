@@ -1,13 +1,13 @@
 package lambda.part1.exercise;
 
 import lambda.data.Person;
-import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SuppressWarnings({"ConstantConditions", "unused"})
 public class Exercise3 {

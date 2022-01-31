@@ -1,7 +1,6 @@
 package lambda.part2.example;
 
 import lambda.data.Person;
-import org.junit.Test;
 
 import java.util.Objects;
 import java.util.function.BiFunction;
@@ -9,7 +8,8 @@ import java.util.function.BiPredicate;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class Example1 {
 

@@ -34,6 +34,11 @@ public class Exercixe1 {
         candidates.put(helen, Status.PENDING);
 
         // TODO implementation
+        for (Map.Entry<Person, Status> entry : candidates.entrySet()) {
+            if(entry.getKey().getAge() > 21) {
+                entry.setValue(Status.ACCEPTED);
+            } else entry.setValue(Status.DECLINED);
+        }
 
         assertThat(candidates, Matchers.hasEntry(ivan, Status.ACCEPTED));
         assertThat(candidates, Matchers.hasEntry(helen, Status.ACCEPTED));

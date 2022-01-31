@@ -1,12 +1,10 @@
 package lambda.part2.exercise;
 
 import lambda.data.Person;
-import org.junit.Test;
 
 import java.util.function.Predicate;
-
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SuppressWarnings({"ConstantConditions", "unused"})
 public class Exercise2 {

@@ -4,7 +4,8 @@ import lambda.data.Employee;
 import lambda.data.JobHistoryEntry;
 import lambda.data.Person;
 import lambda.part3.example.Example1;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 import streams.part2.example.data.PersonDurationPair;
 import streams.part2.example.data.PersonPositionDuration;
 import streams.part2.example.data.PersonPositionPair;
@@ -16,7 +17,6 @@ import java.util.Map;
 
 import static java.util.Comparator.comparingInt;
 import static java.util.stream.Collectors.*;
-import static org.junit.Assert.assertEquals;
 
 @SuppressWarnings("ConstantConditions")
 public class Example4 {

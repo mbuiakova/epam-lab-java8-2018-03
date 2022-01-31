@@ -2,14 +2,14 @@ package api.example;
 
 import lambda.data.JobHistoryEntry;
 import lambda.data.Person;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BiFunction;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SuppressWarnings("Java8CollectionRemoveIf")
 public class Example5 {

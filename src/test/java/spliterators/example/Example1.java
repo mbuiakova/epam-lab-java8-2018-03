@@ -1,15 +1,14 @@
 package spliterators.example;
 
-import org.junit.Test;
 import spliterators.example1.IntArraySpliterator;
 
 import java.util.Arrays;
-import java.util.Spliterator;
 import java.util.stream.IntStream;
 import java.util.stream.StreamSupport;
 
 import static java.util.stream.Collectors.joining;
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class Example1 {
 

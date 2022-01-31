@@ -3,11 +3,10 @@ package streams.part1.exercise;
 import lambda.data.Employee;
 import lambda.data.Person;
 import lambda.part3.example.Example1;
-import org.junit.Test;
 
 import java.util.List;
-
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SuppressWarnings({"ConstantConditions", "unused"})
 public class Exercise2 {

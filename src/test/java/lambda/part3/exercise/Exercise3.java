@@ -2,13 +2,12 @@ package lambda.part3.exercise;
 
 import lambda.data.Employee;
 import lambda.part3.example.Example1;
-import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
-
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SuppressWarnings({"unused", "ConstantConditions"})
 public class Exercise3 {

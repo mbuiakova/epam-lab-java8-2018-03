@@ -1,6 +1,6 @@
 package lambda.part1.example;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 @SuppressWarnings("unused")
 public class Example7 {

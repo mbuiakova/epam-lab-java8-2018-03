@@ -1,12 +1,11 @@
 package spliterators.exercise.exercise2;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
-
-import static org.junit.Assert.assertEquals;
 
 public class Exercise2 {
 

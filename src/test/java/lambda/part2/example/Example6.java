@@ -1,11 +1,11 @@
 package lambda.part2.example;
 
 import lambda.data.Person;
-import org.junit.Test;
 
 import java.util.function.*;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Общее количество стандартных интерфейсов - 43.
