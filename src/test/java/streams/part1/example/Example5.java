@@ -1,4 +1,7 @@
 package streams.part1.example;
+import java.util.Comparator;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -45,5 +48,20 @@ public class Example5 {
         String result = stream.collect(joining(" "));
 
         assertEquals("2 3 4", result);
+    }
+
+    @Test
+    public void sequenceOfExecution() {
+        Stream<String> stringStream = Stream.of("1", "ba", "asd", "12312", "asd", "12", "23", "4545we", "3232", "7878");
+
+        String collect = stringStream.filter(Pattern.compile("^\\d+$").asPredicate())
+                .mapToInt(s -> Integer.parseInt(s))
+                .filter(i -> i > 15)
+                .mapToObj(s -> String.valueOf(s))
+                .filter(s -> s.length() > 3)
+                .sorted(Comparator.reverseOrder())
+                .distinct()
+                .collect(joining(" "));
+        System.out.println(collect);
     }
 }

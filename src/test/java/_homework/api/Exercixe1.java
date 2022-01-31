@@ -34,11 +34,7 @@ public class Exercixe1 {
         candidates.put(helen, Status.PENDING);
 
         // TODO implementation
-        for (Map.Entry<Person, Status> entry : candidates.entrySet()) {
-            if(entry.getKey().getAge() > 21) {
-                entry.setValue(Status.ACCEPTED);
-            } else entry.setValue(Status.DECLINED);
-        }
+        candidates.replaceAll(((person, status) -> person.getAge() > 21 ? Status.ACCEPTED : Status.DECLINED));
 
         assertThat(candidates, Matchers.hasEntry(ivan, Status.ACCEPTED));
         assertThat(candidates, Matchers.hasEntry(helen, Status.ACCEPTED));
@@ -60,6 +56,8 @@ public class Exercixe1 {
         candidates.put(new Person("b", "c", 5), Status.PENDING);
 
         // TODO implementation
+        candidates.keySet().removeIf(person -> person.getAge() < 21);
+        candidates.replaceAll((person, status) -> Status.ACCEPTED);
 
         assertThat(candidates, Matchers.hasEntry(ivan, Status.ACCEPTED));
         assertThat(candidates, Matchers.hasEntry(helen, Status.ACCEPTED));
@@ -77,9 +75,9 @@ public class Exercixe1 {
 
         // TODO implementation
 
-        Status alexStatus = null;
-        Status ivanStatus = null;
-        Status helenStatus = null;
+        Status alexStatus = candidates.getOrDefault(alex, Status.UNKNOWN);
+        Status ivanStatus = candidates.getOrDefault(ivan, Status.UNKNOWN);
+        Status helenStatus = candidates.getOrDefault(helen, Status.UNKNOWN);
 
         assertThat(alexStatus, is(Status.PENDING));
         assertThat(ivanStatus, is(Status.PENDING));
@@ -102,6 +100,7 @@ public class Exercixe1 {
         newValues.put(helen, Status.PENDING);
 
         // TODO implementation
+        oldValues.forEach((person, status) -> newValues.putIfAbsent(person, status));
 
         assertThat(newValues, hasEntry(alex, Status.DECLINED));
         assertThat(newValues, hasEntry(ivan, Status.ACCEPTED));
