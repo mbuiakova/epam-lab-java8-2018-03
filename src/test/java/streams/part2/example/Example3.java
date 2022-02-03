@@ -51,8 +51,8 @@ public class Example3 {
         List<Employee> employees = Example1.getEmployees();
 
         Map<String, Set<Person>> result = employees.stream()
-                                                   .flatMap(Example3::toPersonPositionPairStream)
-                                                   .reduce(new HashMap<>(), Example3::addToMap, Example3::mergeMaps);
+                                                   .flatMap(employee -> toPersonPositionPairStream(employee))
+                                                   .reduce(new HashMap<>(), (map, pair) -> addToMap(map, pair), (left, right) -> mergeMaps(left, right));
 
 
         assertEquals(prepareExpected(employees), result);

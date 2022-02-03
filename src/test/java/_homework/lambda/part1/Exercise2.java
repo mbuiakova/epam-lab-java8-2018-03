@@ -8,7 +8,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.emptyString;
 import static org.hamcrest.Matchers.is;
 
-public class Part1Exercise2 {
+public class Exercise2 {
 
     @FunctionalInterface
     private interface Multiplier<T> {
@@ -22,26 +22,31 @@ public class Part1Exercise2 {
 
     @Test
     void implementsIntegerMultiplierUsingAnonymousClass() {
-        Part1Exercise2.Multiplier<Integer> multiplier = null;
+        Exercise2.Multiplier<Integer> multiplier = new Multiplier<Integer>() {
+            @Override
+            public Integer multiply(Integer value, int multiplier) {
+                return value*multiplier;
+            }
+        };
 
         testIntegerMultiplier(multiplier);
     }
 
     @Test
     void implementsMultiplierUsingStatementLambda() {
-        Part1Exercise2.Multiplier<Integer> multiplier = null;
+        Exercise2.Multiplier<Integer> multiplier = (value, multiplier1) -> value * multiplier1;
 
         testIntegerMultiplier(multiplier);
     }
 
     @Test
     void implementsIntegerMultiplierUsingExpressionLambda() {
-        Part1Exercise2.Multiplier<Integer> multiplier = null;
+        Exercise2.Multiplier<Integer> multiplier = (value, multiplier1) -> value * multiplier1;
 
         testIntegerMultiplier(multiplier);
     }
 
-    private void testIntegerMultiplier(Part1Exercise2.Multiplier<Integer> multiplier) {
+    private void testIntegerMultiplier(Exercise2.Multiplier<Integer> multiplier) {
         assertThat(multiplier.multiply(3, 2), is(6));
         assertThat(multiplier.multiply(Integer.MIN_VALUE, 0), is(0));
         assertThat(multiplier.multiply(7, -1), is(-7));
@@ -59,7 +64,7 @@ public class Part1Exercise2 {
 
     @Test
     void implementsStringMultiplierUsingClassMethodReference() {
-        Part1Exercise2.Multiplier<String> multiplier = null;
+        Exercise2.Multiplier<String> multiplier = Exercise2::multiplyString;
 
         assertThat(multiplier.multiply("a", 3), is("aaa"));
         assertThat(multiplier.multiply("qwerty", 0), is(emptyString()));
@@ -80,7 +85,7 @@ public class Part1Exercise2 {
 
     @Test
     void implementsStringMultiplierUsingObjectMethodReference() {
-        Part1Exercise2.Multiplier<String> multiplier = null;
+        Exercise2.Multiplier<String> multiplier = (string, number) -> stringSumWithDelimiter(string, number);
 
         assertThat(multiplier.multiply("a", 3), is("a-a-a"));
         assertThat(multiplier.multiply("qwerty", 0), is(emptyString()));
