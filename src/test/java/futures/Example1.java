@@ -2,9 +2,8 @@ package futures;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionException;
-import java.util.concurrent.ExecutionException;
+import java.util.concurrent.*;
+import java.util.stream.IntStream;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -73,5 +72,79 @@ public class Example1 {
                 })
                 .exceptionally(throwable -> 42)
                 .thenAccept(System.out::println).join();
+    }
+
+    @Test
+    void name1() throws InterruptedException, ExecutionException {
+        ExecutorService service = new ForkJoinPool(1);
+        Future<Boolean> task = service.submit(() -> {
+            try {
+                service.submit(() -> {
+                    throw new RuntimeException();
+                }).get();
+            } catch (ExecutionException | InterruptedException ex) {
+                return false;
+            }
+            return true;
+        });
+
+        TimeUnit.SECONDS.sleep(2);
+        service.shutdownNow();
+
+        boolean result = task.get();
+
+        System.out.println(result);
+    }
+
+    @Test
+    void name2() throws InterruptedException, ExecutionException {
+        ExecutorService service = Executors.newSingleThreadExecutor();
+        Future<Boolean> task = service.submit(() -> {
+            try {
+                service.submit(() -> {
+                    throw new RuntimeException();
+                }).get();
+            } catch (ExecutionException | InterruptedException ex) {
+                return false;
+            }
+            return true;
+        });
+
+        TimeUnit.SECONDS.sleep(2);
+        service.shutdownNow();
+
+        boolean result = task.get();
+
+        System.out.println(result);
+    }
+
+    @Test //common FJP
+    void fixedThreadPool() throws ExecutionException, InterruptedException {
+        ExecutorService service = Executors.newFixedThreadPool(4);
+        Future<?> submit = service.submit(() -> IntStream.rangeClosed(0, 1_000)
+                .parallel()
+                .mapToObj(i -> {
+                    System.out.println(Thread.currentThread());
+                    return String.valueOf(i);
+                })
+                .forEach(System.out::println));
+
+        service.shutdown();
+        submit.get();
+    }
+
+    @Test //custom FJP
+    void fixedThreadPoolFJP() throws ExecutionException, InterruptedException {
+        ExecutorService service = new ForkJoinPool();
+        Future<?> submit = service.submit(() -> IntStream.rangeClosed(0, 1_000)
+                .parallel()
+                .mapToObj(i -> {
+                    System.out.println(Thread.currentThread());
+                    return String.valueOf(i);
+                })
+                .forEach(System.out::println));
+
+        service.shutdown();
+        submit.get();
     }
 }
